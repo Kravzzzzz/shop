@@ -3,9 +3,9 @@ import { Dropdown, Button, Form, Modal, Row, Col } from "react-bootstrap";
 import { Context } from "../../index";
 import {
   createDevice,
-  featchBrands,
+  fetchBrands,
   fetchTypes,
-  featchDevices,
+  fetchDevices,
 } from "../../http/deviceAPI";
 import { observer } from "mobx-react-lite";
 
@@ -18,8 +18,8 @@ const CreateDevice = observer(({ show, onHide }) => {
 
   useEffect(() => {
     fetchTypes().then((data) => device.setTypes(data));
-    featchBrands().then((data) => device.setBrands(data));
-    // featchDevices().then((data) => device.setDevices(data.rows));
+    fetchBrands().then((data) => device.setBrands(data));
+    fetchDevices().then((data) => device.setDevices(data.rows));
   }, []);
 
   const addInfo = () => {
