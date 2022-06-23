@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Button, Row, Col, Container, Image, Card } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import bigStar from "../assets/bigStar.png";
-import { featchOneDevice } from "../http/deviceAPI";
+import { fetchOneDevice } from "../http/deviceAPI";
 
 const DevicePage = () => {
   const [device, setDevice] = useState({info: []})
   const {id} = useParams()
   useEffect(() => {
-    featchOneDevice(id).then(data => setDevice(data))
+    fetchOneDevice(id).then(data => setDevice(data))
   }, [])
 
   return (
